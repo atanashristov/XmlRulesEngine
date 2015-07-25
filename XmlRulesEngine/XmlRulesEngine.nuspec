@@ -1,0 +1,32 @@
+﻿<?xml version="1.0" ?>
+<package >
+
+  <metadata>
+
+    <id>$id$</id>
+    <version>$version$</version>
+    <title>$title$</title>
+    <authors>$author$</authors>
+    <description>$description$</description>
+    <releaseNotes></releaseNotes>
+
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <owners>Company</owners>
+    <copyright>Copyright Company 2015</copyright>
+
+  </metadata>
+
+  <files>
+    <!-- 
+        This feature supports design-time only assemblies.
+        For example, when using Code Contracts, the contract assemblies
+        need to be next to the runtime assemblies that they augment
+        so that Visual Studio can find them,
+        but the contract assemblies should not actually be referenced
+        by the project and should not be copied into the bin folder.
+    -->
+    <!--<file src="bin\$configuration$\*.dll" target="lib\net45" />-->
+    <!--<file src="bin\$configuration$\*.pdb" target="lib\net45" />-->
+  </files>
+
+</package>

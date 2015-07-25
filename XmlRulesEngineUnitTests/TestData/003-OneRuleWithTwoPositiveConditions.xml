@@ -1,0 +1,26 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rules-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Rules Data">
+
+  <default-results>
+
+    <add name="Given" value="Given only one rule with two conditions" />
+    <add name="When" value="When both conditions evaluate as true" />
+    <add name="Then" value="Then the rule evaluates as true" />
+
+    <add name="Result" value="false" />
+    <add name="Expected" value="true" />
+  </default-results>
+
+  <rules>
+    <add name="Rule One">
+      <conditions>
+        <add name="Condition One" type="BooleanCondition" value="true" />
+        <add name="Condition Two" type="BooleanCondition" value="true" />
+      </conditions>
+      <on-success-results>
+        <add name="Result" value="true" />
+      </on-success-results>
+    </add>
+  </rules>
+  
+</rules-data>

@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rules-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Rules Data">
+  
+  <default-results>
+
+    <add name="Given" value="Given on-failure-results node" />
+    <add name="When" value="It's definition" />
+    <add name="Then" value="May contain inner results nodes with conditions" />
+
+    <add name="Expected" value="2" />
+    <add name="Result" value="0" />
+  </default-results>
+  
+  <rules>
+    
+    <add name="Rule 1" continue-on-success="true">
+      
+      <conditions>
+        <add name="" type="BooleanCondition" value="false" />
+      </conditions>
+      
+      <on-failure-results>
+        <results>
+          <add name="Result" value="1" />
+        </results>
+        <results>
+          <add name="Result" value="2" />
+        </results>
+        <results>
+          <add name="Result" value="3" />
+          <conditions>
+            <add name="" type="BooleanCondition" value="false" />
+          </conditions>
+        </results>
+      </on-failure-results>
+      
+    </add>
+
+  </rules>
+  
+</rules-data>

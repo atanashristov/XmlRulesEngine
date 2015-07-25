@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{DDAF3DD1-EB58-4801-8F71-EBC1E3907975}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>XmlRulesEngine</RootNamespace>
+    <AssemblyName>XmlRulesEngine</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="..\VersionInfo.cs">
+      <Link>VersionInfo.cs</Link>
+    </Compile>
+    <Compile Include="ConditionEvaluators\BaseConditionEvaluator.cs" />
+    <Compile Include="ConditionEvaluators\BooleanCondition.cs" />
+    <Compile Include="ConditionEvaluators\IConditionEvaluator.cs" />
+    <Compile Include="ElementValidators\BaseElementValidator.cs" />
+    <Compile Include="ElementValidators\ElementValidatorExtensions.cs" />
+    <Compile Include="ElementValidators\IsElementActiveEvaluator.cs" />
+    <Compile Include="Misc\TimeMachine.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RulesData\BaseCollection.cs" />
+    <Compile Include="RulesData\BaseElement.cs" />
+    <Compile Include="RulesData\Rule.cs" />
+    <Compile Include="RulesData\RuleCondition.cs" />
+    <Compile Include="RulesData\RuleConditionsCollection.cs" />
+    <Compile Include="RulesData\RuleResult.cs" />
+    <Compile Include="RulesData\RuleResultsCollection.cs" />
+    <Compile Include="RulesData\RulesCollection.cs" />
+    <Compile Include="RulesData\RulesData.cs" />
+    <Compile Include="RulesEngine\ConditionEvaluatorFactory.cs" />
+    <Compile Include="RulesEngine\IRulesEngine.cs" />
+    <Compile Include="RulesEngine\ResultsFilters.cs" />
+    <Compile Include="RulesEngine\RulesDataLoader.cs" />
+    <Compile Include="RulesEngine\RulesEngine.cs" />
+    <Compile Include="RulesEngine\XmlSerializationHelpers.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nuget-pack.bat" />
+    <None Include="XmlRulesEngine.nuspec" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

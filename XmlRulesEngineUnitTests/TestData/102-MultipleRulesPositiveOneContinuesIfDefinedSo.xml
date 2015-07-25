@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rules-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Rules Data">
+  
+  <default-results>
+    
+    <add name="Given" value="Given a rule that evaluates to true" />
+    <add name="When" value="When the rule is set to continue on success" />
+    <add name="Then" value="Then evaluation continues with the next rule" />
+
+    <add name="Expected" value="4" />
+    <add name="Result" value="0" />
+  </default-results>
+  
+  <rules>
+    
+    <add name="Rule 1">
+      <conditions>
+        <add name="" type="BooleanCondition" value="false" />
+      </conditions>
+    </add>
+    
+    <add name="Rule 2" continue-on-success="true"><!-- it is set to continue evaluation after success -->
+      <conditions>
+        <add name="" type="BooleanCondition" value="true" />
+      </conditions>
+      <on-success-results>
+        <add name="Result" value="2" />
+      </on-success-results>
+    </add>
+
+    <add name="Rule 3">
+      <conditions>
+        <add name="" type="BooleanCondition" value="false" />
+      </conditions>
+      <on-success-results>
+        <add name="Result" value="3" />
+      </on-success-results>
+    </add>
+
+    <add name="Rule 4">
+      <conditions>
+        <add name="" type="BooleanCondition" value="true" />
+      </conditions>
+      <on-success-results>
+        <add name="Result" value="4" />
+      </on-success-results>
+    </add>
+
+  </rules>
+  
+</rules-data>

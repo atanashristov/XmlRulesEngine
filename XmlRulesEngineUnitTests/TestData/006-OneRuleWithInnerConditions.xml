@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<rules-data xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema" name="Rules Data">
+  
+  <default-results>
+    
+    <add name="Given" value="Given rule with conditions that have inner conditions" />
+    <add name="When" value="When evaluating the rule" />
+    <add name="Then" value="Then inner conditions will be evaluated too" />
+
+    <add name="Expected" value="true" />
+    <add name="Result" value="false" />
+  </default-results>
+  
+  <rules>
+    <add name="Rule One">
+      
+      <conditions or="true">
+        
+        <add name="Condition 1" type="BooleanCondition" value="false" />
+        
+        <conditions or="true">
+          <conditions>
+            <add name="Condition 2.1.1" type="BooleanCondition" value="false" />
+            <add name="Condition 2.1.2" type="BooleanCondition" value="false" />
+            <add name="Condition 2.1.3" type="BooleanCondition" value="false" />
+          </conditions>
+
+          <conditions or="true">
+            <add name="Condition 2.2.1" type="BooleanCondition" value="false" />
+            <add name="Condition 2.2.2" type="BooleanCondition" value="true" /><!-- This sets the end result as true -->
+            <add name="Condition 2.2.3" type="BooleanCondition" value="false" />
+          </conditions>
+        </conditions>
+        
+        <add name="Condition 3" type="BooleanCondition" value="false" />
+        <add name="Condition 4" type="BooleanCondition" value="false" />
+        
+      </conditions>
+      
+      <on-success-results>
+        <add name="Result" value="true" />
+      </on-success-results>
+    </add>
+  </rules>
+  
+</rules-data>
